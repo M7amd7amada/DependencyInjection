@@ -14,7 +14,7 @@ public record Product
 
     public string? Discription { get; set; }
 
-    [Display(TypeName="decimal(8, 2)")]
+    [Column(TypeName="decimal(8, 2)")]
     public decimal UnitPrice { get; set; }
 
     public bool IsFeatured { get; set; }
