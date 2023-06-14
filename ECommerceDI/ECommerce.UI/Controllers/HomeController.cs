@@ -1,31 +1,21 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ECommerce.Models;
-using ECommerce.Utility.Services;
+using ECommerce.UI.Models;
 
-namespace ECommerce.Controllers;
+namespace ECommerce.UI.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly AppDbContext _dbContext;
 
-    public HomeController(ILogger<HomeController> logger, AppDbContext dbContext)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        _dbContext = dbContext;
     }
 
     public IActionResult Index()
     {
-        bool isPreferredCustomer =
-            this.User.IsInRole("PreferredCustomer");
-
-        var service = new ProductService(_dbContext);
-        var products =
-            service.GetFeaturedProducts(isPreferredCustomer);
-
-        return View(products);
+        return View();
     }
 
     public IActionResult Privacy()

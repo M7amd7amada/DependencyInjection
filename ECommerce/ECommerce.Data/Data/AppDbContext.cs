@@ -8,6 +8,8 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions options)
         : base(options) { }
 
+    public AppDbContext() { }
+
     public DbSet<Product>? Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
