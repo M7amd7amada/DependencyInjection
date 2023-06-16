@@ -14,7 +14,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var viewModel = new FeaturedProductsViewModel(
+            new[] {
+                new ProductsViewModel("Product 1", 100),
+                new ProductsViewModel("Product 2", 200)
+            }
+        );
+
+        return View(viewModel);
     }
 
     public IActionResult Privacy()

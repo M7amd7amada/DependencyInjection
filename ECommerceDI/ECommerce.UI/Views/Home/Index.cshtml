@@ -1,11 +1,11 @@
-﻿@* @model FeaturedProductsViewModel *@
+﻿@model FeaturedProductsViewModel
 
 <div class="text-center">
     <h2>Products List</h2>
-    @foreach (var product in Model.Products)
-    {
-        <ol>
-            <li>@product.SummaryText</li>
-        </ol>
-    }
+    <ol>
+        @foreach (var product in Model.Products)
+        {
+                <li>@product.SummaryText</li>
+        }
+    </ol>
 </div>
